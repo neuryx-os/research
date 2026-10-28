@@ -14,3 +14,4 @@ Status possíveis: `Proposto`, `Aceito`, `Rejeitado`, `Substituído por NNNN`.
 | [0005](0005-neuryxctl-em-go.md) | `neuryxctl` em Go | Aceito |
 | [0006](0006-gestao-grafica-via-vega.md) | Gestão gráfica via módulo de IA do Vega | Aceito |
 | [0007](0007-sem-gateway-e-monitoramento-proprios.md) | Sem gateway nem monitoramento próprios no início | Aceito |
+| [0008](0008-versionamento-acompanha-o-lyra.md) | Versionamento acompanha o Lyra | Aceito |
