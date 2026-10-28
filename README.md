@@ -17,10 +17,13 @@ Este repositório concentra o raciocínio por trás do Neuryx:
 
 Nada aqui é compilado ou empacotado.
 
+O plano e o cronograma do projeto estão em [`ROADMAP.md`](ROADMAP.md).
+
 ## Estrutura
 
 ```
 research/
+├── ROADMAP.md     # plano e cronograma
 ├── adr/
 │   ├── README.md      # índice dos ADRs
 │   ├── template.md    # modelo para novos ADRs
