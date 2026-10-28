@@ -5,7 +5,8 @@ OS Server 16.1 (openSUSE Leap 16.1). A numeração acompanha o Lyra
 ([ADR 0008](adr/0008-versionamento-acompanha-o-lyra.md)).
 
 - **Atualizado em:** 2026-10-28
-- **Alvo do Neuryx 16.1:** abril de 2027
+- **Início:** depois do lançamento do Lyra OS 16.1 (previsto pelo Lyra para até 26/11/2026)
+- **Alvo do Neuryx 16.1:** maio de 2027
 
 ## Premissas
 
@@ -13,6 +14,10 @@ OS Server 16.1 (openSUSE Leap 16.1). A numeração acompanha o Lyra
   próprio e não se ajusta às datas do Neuryx. Este roadmap só agenda trabalho
   do Neuryx; o que depende do Lyra aparece como
   [dependência externa](#dependências-externas-lyra-os), sem data.
+- **O trabalho no Neuryx só começa depois do lançamento do Lyra OS 16.1.**
+  Até lá, o foco é o Lyra. As datas abaixo supõem o lançamento até
+  26/11/2026; se ele mudar, a Fase 0 começa logo após o lançamento e as
+  demais fases andam junto.
 - Um mantenedor em tempo parcial.
 - Os marcos valem mais que as datas. Cada fase termina num estado que
   funciona; se uma dependência ou o tempo faltar, as datas do Neuryx mudam e
@@ -31,12 +36,12 @@ O restante pode avançar em paralelo.
 
 | Fase | Período | Marco |
 | --- | --- | --- |
-| 0 — Pesquisa | 28/10 a 30/11/2026 | ADR 0004 decidido e pattern do Lyra Server especificado |
-| 1 — Pacotes | 01/12 a 31/12/2026 | Pacotes do Neuryx compilando no OBS |
-| 2 — Primeira imagem | Janeiro de 2027 | **Neuryx 16.1 Alpha 1** (qcow2) |
-| 3 — Serviço e ajustes | Fevereiro de 2027 | **Neuryx 16.1 Alpha 2** (ISO e qcow2) |
-| 4 — Estabilização | Março de 2027 | **Neuryx 16.1 Beta**, com congelamento de funcionalidades |
-| 5 — Lançamento | Abril de 2027 | **Neuryx 16.1** |
+| 0 — Pesquisa | Dezembro de 2026 | ADR 0004 decidido e pattern do Lyra Server especificado |
+| 1 — Pacotes | Janeiro de 2027 | Pacotes do Neuryx compilando no OBS |
+| 2 — Primeira imagem | Fevereiro de 2027 | **Neuryx 16.1 Alpha 1** (qcow2) |
+| 3 — Serviço e ajustes | Março de 2027 | **Neuryx 16.1 Alpha 2** (ISO e qcow2) |
+| 4 — Estabilização | Abril de 2027 | **Neuryx 16.1 Beta**, com congelamento de funcionalidades |
+| 5 — Lançamento | Maio de 2027 | **Neuryx 16.1** |
 
 ## Dependências externas (Lyra OS)
 
@@ -53,7 +58,9 @@ propô-los e especificá-los, mas não define quando acontecem.
 Se uma dependência não estiver pronta quando a fase do Neuryx que precisa dela
 começar, a fase espera e o cronograma do Neuryx é atualizado aqui.
 
-## Fase 0 — Pesquisa (28/10 a 30/11/2026)
+## Fase 0 — Pesquisa (dezembro de 2026)
+
+Começa depois do lançamento do Lyra OS 16.1.
 
 - [ ] Concluir o [tópico 01](topics/01-licenciamento-nvidia-cuda.md) e aceitar ou revisar o [ADR 0004](adr/0004-driver-nvidia-no-primeiro-boot.md).
 - [ ] Concluir o [tópico 03](topics/03-versoes-do-llama-cpp.md): política de versões e flags de build do llama.cpp.
@@ -63,7 +70,7 @@ começar, a fase espera e o cronograma do Neuryx é atualizado aqui.
 
 **Marco:** ADR 0004 com status final e proposta do pattern entregue ao Lyra.
 
-## Fase 1 — Pacotes (01/12 a 31/12/2026)
+## Fase 1 — Pacotes (janeiro de 2027)
 
 - [ ] Criar o projeto OBS `home:rodrigosbrito:lyra:Neuryx`.
 - [ ] `llama-cpp` compilando no OBS nas variantes CPU e Vulkan.
@@ -73,7 +80,7 @@ começar, a fase espera e o cronograma do Neuryx é atualizado aqui.
 `patterns-neuryx` sobre um Lyra Server depende do pattern do Lyra estar
 publicado.
 
-## Fase 2 — Primeira imagem (janeiro de 2027)
+## Fase 2 — Primeira imagem (fevereiro de 2027)
 
 Requer: pattern do Lyra Server publicado e Lyra OS Server 16.1 estável.
 
@@ -85,7 +92,7 @@ Requer: pattern do Lyra Server publicado e Lyra OS Server 16.1 estável.
 **Marco — Neuryx 16.1 Alpha 1:** imagem qcow2 que inicializa, instala o driver
 no primeiro boot e roda um modelo na CPU e na GPU.
 
-## Fase 3 — Serviço e ajustes (fevereiro de 2027)
+## Fase 3 — Serviço e ajustes (março de 2027)
 
 - [ ] `neuryxctl serve enable` e `serve status`, com unidades systemd do `llama-server`.
 - [ ] [Tópico 02](topics/02-ganhos-reais-de-tuning.md): benchmark com `llama-bench`; adotar no `neuryx-tuning` só os ajustes com ganho medido.
@@ -94,7 +101,7 @@ no primeiro boot e roda um modelo na CPU e na GPU.
 **Marco — Neuryx 16.1 Alpha 2:** ISO e qcow2, com modelo servido pela API
 compatível com OpenAI.
 
-## Fase 4 — Estabilização (março de 2027)
+## Fase 4 — Estabilização (abril de 2027)
 
 - [ ] Testes em hardware real, com pelo menos uma GPU NVIDIA de referência.
 - [ ] Documentação de instalação e uso; atualizar o site.
@@ -103,7 +110,7 @@ compatível com OpenAI.
 **Marco — Neuryx 16.1 Beta:** congelamento de funcionalidades; a partir daqui,
 apenas correções.
 
-## Fase 5 — Lançamento (abril de 2027)
+## Fase 5 — Lançamento (maio de 2027)
 
 - [ ] Candidata de lançamento (RC) e correções.
 - [ ] Lançamento do **Neuryx 16.1**.
